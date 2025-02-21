@@ -1,9 +1,14 @@
 <script>
+import SelectIngredient from './SelectIngredient.vue';
+
 export default {
     data(){
         return {
             ingredients: ['Tomate', 'Cebola', 'Alho']
         }
+    },
+    components: {
+        SelectIngredient
     }
 }
 </script>
@@ -11,8 +16,8 @@ export default {
 <template>
     <main class="main">
         <section>
-            <span class="list">
-                Sua lista
+            <span class="subtitle-lg list">
+                Sua lista:
             </span>
 
             <ul v-if="ingredients.length" class="list-ingredient">
@@ -22,11 +27,13 @@ export default {
                 </li>
             </ul>
 
-            <p v-else class="empty-list">
+            <p v-else class="paragraph empty-list">
                 <img src="../assets/images/empty-list.svg" alt="">
                 Sua lista está vazia, selecione ingredientes para iniciar.
             </p>
         </section>
+        
+        <SelectIngredient />
     </main>
 </template>
 
