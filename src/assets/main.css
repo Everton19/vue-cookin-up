@@ -6,6 +6,7 @@
   --cream: #fffaf3;
   --medium-green: #3D6D4A;
   --dark-green: #263a29;
+  --coral: #FF6B6B;
 
   --font-family: 'Nunito Sans', sans-serif;
 }
@@ -33,4 +34,9 @@ body {
   font-size: 1rem;
   font-weight: 400;
   background-color: var(--dark-green);
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
 }
