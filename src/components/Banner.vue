@@ -3,14 +3,14 @@
         <div>
             <img src="../assets/images/Logo.png" alt="Logo do Projeto" class="logo" />
 
-            <p class="header-phrase">
+            <p class="header-lg header-phrase">
                 <span class="text-header">
                     Um banquete de ideias para
                 </span>
                 despertar o chef que há em você!
             </p>
 
-            <p class="subtitle">
+            <p class="subtitle-lg">
                 Explore novas receitas todos os dias com ingredientes que estão ao seu alcance!
             </p>
 
