@@ -22,12 +22,12 @@ export default {
                 class="category-image">
         </header>
 
-        <h2 class="paragraph category-name">
+        <h2 class="paragraph-lg category-name">
             {{ category.nome }}
         </h2>
 
         <ul class="category-ingredient">
-            <li v-for="ingredient in category.ingredientes" :key="ingredient">
+            <li v-for="ingredient in category?.ingredientes" :key="ingredient">
                 {{ ingredient }}
             </li>
         </ul>
