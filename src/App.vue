@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import Banner from './components/Banner.vue';
-import Main from './components/Main.vue';
+import Banner from '@/components/Banner.vue';
+import Main from '@/components/Main.vue';
 </script>
 
 <template>
