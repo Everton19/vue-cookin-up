@@ -1,11 +1,15 @@
-<script>
-import { getCategories } from '@/http/index.ts'
+<script lang="ts">
+import { getCategories } from '@/http/index';
+import type ICategory from '@/interfaces/ICategory';
 
 export default {
     data(){
         return {
-            categories: getCategories()
+            categories: [] as ICategory[]
         }
+    },
+    async created(){
+        this.categories = await getCategories();
     }
 }
 
