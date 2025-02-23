@@ -20,12 +20,12 @@
   line-height: 120%;
 }
 
-.subtitle {
-  font-family: var(--font-family);
-  font-size: 2rem;
+.header {
+  font-family: Paytone One;
+  font-size: 44px;
   font-style: normal;
   font-weight: 400;
-  line-height: 150%
+  line-height: 120%;
 }
 
 .subtitle-lg {
@@ -44,6 +44,14 @@
   line-height: 150%;
 }
 
+.paragraph-lg {
+  font-family: Nunito Sans;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%;
+}
+
 body {
   min-height: 100vh;
   color: var(--cream);
@@ -53,7 +61,21 @@ body {
   background-color: var(--dark-green);
 }
 
-ul {
+ul, li {
   list-style-type: none;
   padding: 0;
+}
+
+@media only screen and (max-width: 767px) {
+  .header-lg {
+    font-size: 2.75em;
+  }
+
+  .header {
+    font-size: 2.3125em;
+  }
+
+  .subtitle-lg {
+    font-size: 1.625em;
+  }
 }
