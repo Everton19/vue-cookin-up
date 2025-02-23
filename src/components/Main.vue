@@ -1,5 +1,5 @@
-<script>
-import SelectIngredient from './SelectIngredient.vue';
+<script lang="ts">
+import SelectIngredient from '@/components/SelectIngredient.vue';
 
 export default {
     data(){
@@ -8,7 +8,7 @@ export default {
         }
     },
     components: {
-        SelectIngredient
+        SelectIngredient,
     }
 }
 </script>

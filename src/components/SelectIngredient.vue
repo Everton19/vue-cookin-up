@@ -1,6 +1,6 @@
-<script>
-import { getCategories } from '@/http/index.ts';
-import { ICategory } from '@/interfaces';
+<script lang="ts">
+import { getCategories } from '@/http/index';
+import type ICategory from '@/interfaces/ICategory';
 
 export default {
     data(){
