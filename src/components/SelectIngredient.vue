@@ -21,11 +21,11 @@ export default {
 
 <template>
     <section class="select-ingredient">
-        <h1 class="header-lg ingredients-title">
+        <h1 class="header ingredients-title">
             Ingredientes
         </h1>
 
-        <p class="subtitle-lg instruction">
+        <p class="paragraph-lg instruction">
             Selecione abaixo os ingredientes que você quer usar nesta receita:
         </p>
 
@@ -35,7 +35,7 @@ export default {
             </li>
         </ul>
 
-        <p class="hints">
+        <p class="paragraph hint">
             *Atenção: consideramos que você tem em casa sal, pimenta e água.
         </p>
     </section>
@@ -60,10 +60,20 @@ export default {
 }
 
 .categories {
-    margin-bottom: 1rem;
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
 }
 
+.hint {
+  margin: 1.5rem 0 3.5rem 0;
+}
+
+@media only screen and (max-width: 767px) {
+  .hint {
+    margin: 1.5rem 0 1.5rem 0;
+  }
+}
 </style>

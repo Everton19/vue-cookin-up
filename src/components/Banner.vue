@@ -1,24 +1,24 @@
 <template>
-    <header class="banner">
-        <div>
-            <img src="../assets/images/Logo.png" alt="Logo do Projeto" class="logo" />
+  <header class="banner">
+    <div>
+      <img src="../assets/images/Logo.png" alt="Logo do Projeto" class="logo" />
 
-            <p class="header-lg header-phrase">
-                <span class="text-header">
-                    Um banquete de ideias para
-                </span>
-                despertar o chef que há em você!
-            </p>
+      <p class="header-lg header-phrase">
+        <span class="text-header">
+          Um banquete de ideias para
+        </span>
+        despertar o chef que há em você!
+      </p>
 
-            <p class="subtitle-lg">
-                Explore novas receitas todos os dias com ingredientes que estão ao seu alcance!
-            </p>
+      <p class="subtitle-lg">
+        Explore novas receitas todos os dias com ingredientes que estão ao seu alcance!
+      </p>
 
-        </div>
-        <div class="">
-            <img src="../assets/images/Banner-image.png" alt="" class="banner-image" />
-        </div>
-    </header>
+    </div>
+
+    <img src="../assets/images/Banner-image.png" alt="" class="banner-image" />
+
+  </header>
 </template>
 
 <style scoped>
