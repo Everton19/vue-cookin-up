@@ -14,5 +14,63 @@ export default {
 </script>
 
 <template>
-    {{ category.nome }}
+    <article class="category">
+        <header class="category-header">
+            <img 
+                :src="`/src/assets/images/ingredients/${category.imagem}`" 
+                :alt="`${category.imagem}`" 
+                class="category-image">
+        </header>
+
+        <h2 class="paragraph category-name">
+            {{ category.nome }}
+        </h2>
+
+        <ul class="category-ingredient">
+            <li v-for="ingredient in category.ingredientes" :key="ingredient">
+                {{ ingredient }}
+            </li>
+        </ul>
+    </article>
 </template>
+
+<style scoped>
+.category {
+  width: 19.5rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  background: var(--white, #fff);
+  box-shadow: 4px 4px 10px 0px rgba(68, 68, 68, 0.05);
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.category-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.category-image {
+  width: 3.5rem;
+}
+
+.category-name {
+  text-align: center;
+  color: var(--medium-green, #3d6d4a);
+  font-weight: 700;
+}
+
+.category-ingredient {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+</style>
