@@ -21,7 +21,7 @@ export default {
 </script>
 
 <template>
-    <button class="ingredient" @click="!selected" :aria-pressed="selected">
+    <button class="ingredient" @click="selected = !selected" :aria-pressed="selected">
         <Tag :text="ingredient" :active="selected" />
     </button>
 </template>
