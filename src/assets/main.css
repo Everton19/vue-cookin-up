@@ -12,6 +12,12 @@
   --font-family: 'Nunito Sans', sans-serif;
 }
 
+button {
+  border: 0;
+  background-color: inherit;
+  font: inherit;
+}
+
 .header-lg {
   font-family: Paytone One;
   font-size: 53.7px;
