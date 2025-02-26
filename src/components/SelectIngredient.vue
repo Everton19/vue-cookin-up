@@ -2,6 +2,7 @@
 import { getCategories } from '@/http/index';
 import type ICategory from '@/interfaces/ICategory';
 import CardCategory from './CardCategory.vue';
+import PrincipalButton from './MainButton.vue';
 
 export default {
     data(){
@@ -12,9 +13,10 @@ export default {
     async created(){
         this.categories = await getCategories();
     },
-    emits: ['addIngredient', 'removeIngredient'],
+    emits: ['addIngredient', 'removeIngredient', 'searchRecipes'],
     components: {
-        CardCategory
+        CardCategory,
+        PrincipalButton
     }
 }
 
@@ -43,6 +45,8 @@ export default {
         <p class="paragraph hint">
             *Atenção: consideramos que você tem em casa sal, pimenta e água.
         </p>
+
+        <PrincipalButton text="Buscar Receitas" @click="$emit('searchRecipes')"/>
     </section>
 </template>
 

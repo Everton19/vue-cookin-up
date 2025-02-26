@@ -1,11 +1,15 @@
 <script lang="ts">
 import SelectIngredient from '@/components/SelectIngredient.vue';
 import Tag from '@/components/Tag.vue';
+import ShowRecipes from './ShowRecipes.vue';
+
+type Page = 'Show Recipes' | 'Select Ingredients';
 
 export default {
     data(){
         return {
-            ingredients: [] as string[]
+            ingredients: [] as string[],
+            content: 'Select Ingredients' as Page
         }
     },
     methods: {
@@ -15,11 +19,16 @@ export default {
 
         removeIngredient(ingredient: string){
             this.ingredients = this.ingredients.filter((item) => item !== ingredient);
+        },
+
+        searchRecipes(page: Page){
+            this.content = page;
         }
     },
     components: {
         SelectIngredient,
-        Tag
+        Tag,
+        ShowRecipes
     }
 }
 </script>
@@ -44,10 +53,13 @@ export default {
             </p>
         </section>
         
-        <SelectIngredient 
+        <SelectIngredient v-if="content === 'Select Ingredients'"
             @add-ingredient="addIngriedient($event)"
             @remove-ingredient="removeIngredient($event)"
-        />
+            @search-recipes="searchRecipes('Show Recipes')"
+        /> 
+
+        <ShowRecipes v-else-if="content == 'Show Recipes'"/>
     </main>
 </template>
 
