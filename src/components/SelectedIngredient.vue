@@ -8,20 +8,32 @@ export default {
             required: true
         }
     },
-    components: {
-        Tag
+    methods: {
+        onClick() {
+            this.selected = !this.selected;
+
+            if (this.selected) {
+                this.$emit('addIngedient', this.ingredient);
+            } else {
+                this.$emit('removeIngedient', this.ingredient);
+            }
+        }
     },
+    emits: ['addIngedient', 'removeIngedient'],
     data() {
         return {
             selected: false
         }
-    }
+    },
+    components: {
+        Tag
+    },
 }
 
 </script>
 
 <template>
-    <button class="ingredient" @click="selected = !selected" :aria-pressed="selected">
+    <button class="ingredient" @click="onClick" :aria-pressed="selected">
         <Tag :text="ingredient" :active="selected" />
     </button>
 </template>
