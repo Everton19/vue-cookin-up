@@ -10,6 +10,7 @@ export default {
             required: true
         }
     },
+    emits: ['addIngredient', 'removeIngredient'],
     components: {
         SelectedIngredient
     }
@@ -32,7 +33,11 @@ export default {
 
         <ul class="category-ingredient">
             <li v-for="ingredient in category?.ingredientes" :key="ingredient">
-              <SelectedIngredient :ingredient="ingredient"/>
+              <SelectedIngredient 
+                :ingredient="ingredient"
+                @add-ingedient="$emit('addIngredient', $event)"
+                @remove-ingedient="$emit('removeIngredient', $event)"
+              />
             </li>
         </ul>
     </article>

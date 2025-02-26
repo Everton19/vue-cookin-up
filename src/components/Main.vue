@@ -5,7 +5,16 @@ import Tag from '@/components/Tag.vue';
 export default {
     data(){
         return {
-            ingredients: ['Tomate', 'Cebola', 'Alho']
+            ingredients: [] as string[]
+        }
+    },
+    methods: {
+        addIngriedient(ingredient: string){
+            this.ingredients.push(ingredient);
+        },
+
+        removeIngredient(ingredient: string){
+            this.ingredients = this.ingredients.filter((item) => item !== ingredient);
         }
     },
     components: {
@@ -35,7 +44,10 @@ export default {
             </p>
         </section>
         
-        <SelectIngredient />
+        <SelectIngredient 
+            @add-ingredient="addIngriedient($event)"
+            @remove-ingredient="removeIngredient($event)"
+        />
     </main>
 </template>
 
