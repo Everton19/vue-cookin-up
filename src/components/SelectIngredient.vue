@@ -46,7 +46,11 @@ export default {
             *Atenção: consideramos que você tem em casa sal, pimenta e água.
         </p>
 
-        <PrincipalButton text="Buscar Receitas" @click="$emit('searchRecipes')"/>
+        <PrincipalButton 
+            text="Buscar Receitas" 
+            @click="$emit('searchRecipes')"
+            class="button-rounded"
+        />
     </section>
 </template>
 
@@ -78,6 +82,14 @@ export default {
 
 .hint {
   margin: 1.5rem 0 3.5rem 0;
+}
+
+.button-rounded {
+    background-color: var(--coral);
+    color: var(--white);
+    padding: 0.5rem 2.5rem;
+    border-radius: 1.5rem;
+    cursor: pointer;
 }
 
 @media only screen and (max-width: 767px) {
