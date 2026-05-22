@@ -1,40 +1,121 @@
-# cookin-up
+# Cookin' Up
 
-This template should help get you started developing with Vue 3 in Vite.
+Projeto de estudo desenvolvido com Vue 3 + Vite para praticar construção de interfaces, componentização e fluxo de dados em uma aplicação de receitas baseada em ingredientes selecionados.
 
-## Recommended IDE Setup
+## Sobre o projeto
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+Este projeto foi utilizado como estudo de Vue, com foco em conceitos essenciais do ecossistema frontend moderno.
 
-## Type Support for `.vue` Imports in TS
+O fluxo da aplicação é simples:
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+1. O usuário seleciona os ingredientes disponíveis.
+2. A aplicação monta uma lista com os itens escolhidos.
+3. As receitas são filtradas e exibidas de acordo com os ingredientes necessários.
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+Os dados de categorias e receitas são carregados via `fetch` a partir de arquivos JSON externos.
 
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+## Objetivos de aprendizado
 
-## Customize configuration
+- Praticar componentização com Vue
+- Trabalhar com `props`, `emits` e estado local
+- Organizar uma aplicação em componentes reutilizáveis
+- Consumir dados externos com `fetch`
+- Utilizar TypeScript na tipagem de dados e componentes
+- Estruturar um projeto frontend com Vite
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+## Funcionalidades
 
-## Project Setup
+- Seleção de ingredientes por categoria
+- Atualização visual da lista de ingredientes escolhidos
+- Busca de receitas compatíveis com os ingredientes selecionados
+- Tela de resultados com estado vazio quando nenhuma receita é encontrada
+- Layout responsivo para desktop e mobile
 
-```sh
+## Tecnologias utilizadas
+
+- Vue 3
+- TypeScript
+- Vite
+- ESLint
+- Prettier
+
+## Estrutura do projeto
+
+```text
+src/
+  components/     # componentes visuais e de fluxo da aplicação
+  http/           # acesso aos dados de categorias e receitas
+  interfaces/     # tipagens TypeScript
+  operations/     # funções utilitárias
+  assets/         # imagens, ícones e estilos
+
+public/
+  images/         # imagens públicas usadas nas receitas e categorias
+```
+
+## Como executar localmente
+
+### Pré-requisitos
+
+- Node.js 18+ recomendado
+- npm
+
+### Instalação
+
+```bash
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+### Ambiente de desenvolvimento
 
-```sh
+```bash
 npm run dev
 ```
 
-### Type-Check, Compile and Minify for Production
+### Build de produção
 
-```sh
+```bash
 npm run build
 ```
+
+### Preview da build
+
+```bash
+npm run preview
+```
+
+### Lint
+
+```bash
+npm run lint
+```
+
+### Formatação
+
+```bash
+npm run format
+```
+
+## Scripts disponíveis
+
+- `npm run dev`: inicia o servidor de desenvolvimento
+- `npm run build`: executa type-check e gera a build de produção
+- `npm run preview`: abre a build localmente para conferência
+- `npm run lint`: valida e corrige problemas de lint
+- `npm run format`: formata os arquivos dentro de `src/`
+
+## Regras de negócio implementadas
+
+- Uma receita só é exibida quando todos os ingredientes necessários estão presentes na lista selecionada.
+- Ingredientes básicos como sal, pimenta e água são considerados disponíveis, conforme o texto da interface.
+
+## Melhorias futuras
+
+- Adicionar busca por nome da receita
+- Permitir remoção em lote dos ingredientes selecionados
+- Exibir loading e tratamento de erro nas chamadas HTTP
+- Publicar uma demonstração online
+
+## Licença
+
+Este projeto foi desenvolvido para fins de estudo e portfólio. Pode ser usado como referência para aprendizado e personalização.
